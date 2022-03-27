@@ -1,0 +1,362 @@
+.icon-menu {
+    color: white !important;
+    font-size: 23px !important;
+}
+.fa-cart-plus{
+    margin-left: 5px;
+    font-size: 17px !important;
+}
+/*-------------------------------------------*/
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #111;
+    line-height: 1.15;
+}
+#wrapper{
+    margin: 0 auto;  /*Can giua*/
+    transition: 0.5s;
+}
+/*Header*/
+#header{
+    background-color: #131921;
+    width: 100%;
+    z-index: 100;
+}
+#small-menu{
+    background-color: #353b48;
+    display: none;
+    position: relative;
+}
+#toggle-menu{
+    background-color: #353b48;
+    color: #fff;
+    font-size: 27px;
+    cursor: pointer;
+    display: none;
+    padding: 10px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;  /*day 2 phan sang 2 ben*/
+    justify-items: center;
+    position: relative;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+.container{
+    max-width: 1170px;
+    margin: 0px auto;
+}
+#main-menu{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+#main-menu li a{
+    font-size: 15px;
+    color: #f8f8f8;
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;  
+}
+#main-menu>li>a{  /* > nghia la con truc tiep cua phan tu truoc no */
+    position: relative;
+}
+#main-menu>li>a::before{  /* > nghia la con truc tiep cua phan tu truoc no */
+    content: '';
+    height: 4px;
+    width: 0px;
+    background-color: #f00;
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    display: none;
+    transition: 0.5s;
+}
+#main-menu>li:hover>a::before{  /* > nghia la con truc tiep cua phan tu truoc no */
+    display: block;
+    width: 100%;
+}
+#main-menu>li>a.active{  /* > nghia la con truc tiep cua phan tu truoc no */
+    background-color: #f00;
+}
+.sub-menu{
+    width: 1070px;
+    height: fit-content;
+    position: absolute;
+    background-color: #E8E8E8;
+    top: 48px;
+    padding: 20px 50px;
+    display: none;
+    justify-content: space-between;
+    transition: 0.5s ease-in-out;
+}
+.open-sub-menu{
+    display: flex;
+}
+.close-sub-menu{
+    display: none;
+}
+.parrent{
+    width: 200px;
+    height: fit-content;
+}
+.parrent h3{
+    color: #111;
+    font-size: 17px;
+    font-weight: 600;
+}
+.parrent a{
+    display: block;
+    text-decoration: none;
+    color: #333f48;
+    padding-top: 15px;
+    font-size: 16px;
+}
+#logo img{
+    width: 130px;
+    display: block;  /*Lam mat khung cua anh*/
+}
+.container input{
+    padding-top: 5px;
+}
+.sb-sbm{  /* class sb-sbm trong search-box */
+    height: auto;
+    width: 30px;
+    color: transparent;  /* trong suot */
+    background: transparent url(../public/Pictures/search_icon.png) 
+    no-repeat center; /* trong suot */
+    background-size: contain; /*anh nam dung trong box*/
+    border: none;
+}
+.icon-header{
+    font-size: 25px;
+    color: #f8f8f8;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+/*Content*/
+#wrapper-content{
+    max-width: 1170px;
+    margin: 0 auto;  /*Can giua*/
+    transition: 0.5s;
+}
+.headline{
+    text-align: center;
+    margin: 40px 0;
+    margin-top: 90px;
+}
+.headline h3{
+    font-size: 20px;
+    color: #555;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: 1px solid #bebebe;
+    display: inline-block;
+    font-weight: 600;
+}
+ul.products{
+    list-style: none;  /*mat dau cham cua li*/
+    display: inline-flex;
+    flex-wrap: wrap;  /*xuong hang*/
+    justify-content: space-between; /*can deu*/
+    transition: 0.5s;
+}
+ul.products li{
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-basis: 25%;  /*toi da 4 san pham cung 1 hang*/
+    box-sizing: border-box;  /*padding day noi dung vao trong (nd sẽ co vào)*/
+    margin-bottom: 50px;
+}
+
+ul.products li .product-top{
+    position: relative;
+}
+ul.products li:hover .product-top .product-thumb img{
+    filter: opacity(85%);  /*hover chuot lam anh mo*/
+}
+ul.products li .product-top .product-thumb img{
+    display: block;  /*Lam mat khung cua anh*/
+}
+ul.products li .product-top a.detail{
+    transition: 0.5s ease-in-out;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    background-color: #446084;
+    color: #fff;
+    padding: 10px 0px;
+    position: absolute;  /*vi tri tuong doi vs the cha cua no*/
+    width: 100%;
+    display: none;  /* An khi chua hover */
+    bottom: -35px;
+    opacity: 0.85;
+}
+ul.products li .product-top:hover a.detail{
+    display: block;  /* Show Buy Now khi hover vao li */
+    bottom: 0px;
+}
+.detail:hover{
+    font-size: 20px;  /* Tang font-size khi hover vao Buy Now */
+}
+.product-info-buy{
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.product-info-buy a{
+    display: block;
+    text-decoration: none;
+}
+.product-info-buy a.product-cat{
+    font-size: 11px;
+    color: #9e9e9e;
+    text-transform: uppercase;
+    padding: 3px 0px;
+}
+.product-info-buy a.product-name{
+    color: #334862;
+    padding: 3px 0px;
+}
+.product-info-buy div.product-price{
+    color: #111;
+    padding: 3px 0px;
+    font-weight: 600;
+}
+.product-info-buy div.product-price span{
+    color: #666666;
+    text-decoration: line-through;
+}
+.product-info-buy .product-status-available{
+    color: #3867d6;
+    font-size: 13px;
+}
+.product-info-buy .product-status-soldout{
+    color: #EA2027;
+    font-size: 13px;
+}
+.product-info-buy button.buy-now{
+    height: 50px;
+    background-color: #0984e3;  /*#0652DD*/
+    color: #ffffff;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    transition-duration: 0.4s;
+}
+.product-info-buy button.buy-now:hover{
+    background-color: #0652DD; 
+}
+.product-info-buy button.cannot-buy{
+    height: 50px;
+    background-color: #9e9e9e;
+    color: #ffffff;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+.product-image{
+    max-width: 100%; /*Kich thuoc max vua bang voi khung cua no*/
+    height: auto;
+}
+#index{
+    width: fit-content;
+    display: flex;
+    margin: 0 auto;  /*can giua*/
+}
+#index a{
+    color: 	#666666;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 0px 10px;
+}
+#index a:hover{
+    color: #f00
+}
+#index a.page-current{
+    text-decoration: underline;
+    color: #111;
+}
+
+
+#footer{
+    height: 200px;
+}
+
+@media screen and (max-width: 768px){
+    /*Responsive tren nhung thiet bi co width be hon 768px*/
+    #small-menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;  /* day 2 phan tu sang 2 ben */
+    }
+    #toggle-menu{
+        display: block;
+        z-index: 2;
+    }
+    #logo-small{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    #logo-small img{
+        width: 124px;
+        /* display: block + margin: 0 auto => can giua */
+        display: block;
+        margin: 0 auto;
+    }
+    #login-icon{
+        z-index: 2;
+    }
+    #login-icon i{
+        display: block;
+        right: 15px;
+        padding-top: 0px;
+        padding-right: 10px;
+    }
+    #main-menu{
+        flex-direction: column;  /*Chuyen menu tu ngang -> doc*/
+    }
+    #header nav{
+        display: none;
+    }
+    #main-menu li a{
+        width: fit-content;
+    }
+    .hide-small{
+        display: none;
+    }
+    .sub-menu{
+        flex-direction: column;  /*Chuyen menu tu ngang -> doc*/
+        margin-left: 101px;
+        height: 241px;
+        top: 0px;
+    }
+    .parrent a{
+        display: none;
+    }
+
+    ul.products li{
+        flex-basis: 50%;
+    }
+}
