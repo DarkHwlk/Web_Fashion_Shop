@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 /* import css */
 import './index.css';
 import './css/cart.css';
+import './css/menu_cart.css';
 
 ReactDOM.render(
   <React.StrictMode>

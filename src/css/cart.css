@@ -62,7 +62,7 @@ table.cart-table-items tbody tr td{
     display: flex;
 }
 .cart-item-info .cart-item-photo img{
-    width: 80px;
+    width: 100px;
     margin-right: 15px;
 }
 .cart-item-detail>a{
@@ -140,4 +140,6 @@ table.cart-table-checkout td{
     font-weight: bolder;
     font-size: 17px;
     background-color: #333f48;
+    border: none;
+    border-radius: 5px;
 }
