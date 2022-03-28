@@ -1,17 +1,23 @@
 import React from "react";
 
-function ItemMiniCart() {
+function ItemMiniCart(props) {
+
+    const {id, type, name, img, price, sale} = props;
+
     return (
         <li className="minicart-item">
+            <div className="minicart-item-info">
             <div className="minicart-item-photo">
                 <a href="#">
-                    <img src="./Pictures/ao_thun_1.jpg"/>
+                    <img src={img}/>
                 </a>
             </div>
             <div className="minicart-item-detail">
-                <a href="#">Black tshirt</a>
-                <p className="cart-item-type">Tshirt</p>
+                <a href="#">{name}</a>
+                <p className="cart-item-type">{type}</p>
+                <span>{price}$</span>
                 {/* Maybe have option like: size,color,... at here */}
+            </div>
             </div>
             <div className="minicart-remove">
                 <button>

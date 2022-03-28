@@ -1,7 +1,7 @@
 function Home() {
     return (
         <div id="wrapper-content">
-            <div class="headline">
+            <div className="headline">
                 <h3>HOME</h3>
             </div>
         </div>

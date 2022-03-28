@@ -14,7 +14,7 @@ function IconMenu() {
             <input type="search"/>
             <input className="sb-sbm" type="submit" />
             {/* Menu Icon Cart */}
-            <a onClick={() => {setMiniCart(prev => !prev)}}>
+            <a onClick={() => setMiniCart(prev => !prev)}>
                 <i className="fa fa-shopping-cart icon-menu" />
             </a>
             {/* Menu Icon Profile */}
@@ -22,7 +22,7 @@ function IconMenu() {
                 <i className="fa fa-user icon-header icon-menu" />
             </NavLink>
             {/* Mini cart */}
-            {miniCart ? <MiniCart/> : null}
+            {miniCart ? <MiniCart onClose={() => setMiniCart(prev => !prev)}/> : null}
         </div>
     );
 }
