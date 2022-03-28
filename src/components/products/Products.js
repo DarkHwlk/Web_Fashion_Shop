@@ -1,87 +1,15 @@
 import React from "react";
-import {v4} from 'uuid';
+/* redux */
+import {connect} from 'react-redux'
 
 /* Components */
 import Product from "./Product";
 
-const products = [
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: true,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: false,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: true,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: false,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: false,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: true,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: false,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: false,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-];
+function Products(props) {
 
-function Products() {
+    const {products} = props;
 
-    const showProduct = () => {
+    const showProduct = (products) => {
         let result = null;
         result = products.map((product, index) => {
             return (
@@ -96,9 +24,22 @@ function Products() {
 
     return (
         <ul className="products">
-            {showProduct()}
+            {showProduct(products)}
         </ul>
     );
 }
 
-export default Products;
+/* Chuyen state cua reducer thanh props cua component nay */
+const mapStateToProps = (state) => {
+    return { 
+        products: state.products,
+    };
+}
+/* Chuyen action thanh props cua component nay */
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
