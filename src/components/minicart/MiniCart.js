@@ -1,97 +1,23 @@
 import React from "react";
-import {v4} from 'uuid';
+/* redux */
+import {connect} from 'react-redux'
 /* Router */
 import {NavLink} from 'react-router-dom';
 /* Components */
 import ItemMiniCart from "./ItemMiniCart";
 
-const cart = [
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: true,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: false,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: true,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: false,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: false,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: true,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: false,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-    {
-        id: v4(),
-        type: "tshirt",
-        name: "Black tshirt",
-        price: 10,
-        sale: 5,
-        status: false,  //con hang
-        img: "./Pictures/ao_thun_1.jpg",
-    },
-];
-
 function MiniCart(props) {
 
-    const {onClose} = props;
+    const {onClose, cart} = props;
 
     const showItems = () => {
         let result = null;
-        result = cart.map((product, index) => {
+        result = cart.map((productInCart, index) => {
+            let {product, quantity} = productInCart;
             return (
             <ItemMiniCart
-                key={index} type={product.type} img={product.img}
-                id={product.id} name={product.name}
-                price={product.price} sale={product.sale}
+                product={product}
+                quantity={quantity}
             />);
         })
         return result;
@@ -121,4 +47,17 @@ function MiniCart(props) {
     );
 }
 
-export default MiniCart;
+/* Chuyen state cua reducer thanh props cua component nay */
+const mapStateToProps = (state) => {
+    return { 
+        cart: state.cart,
+    };
+}
+/* Chuyen action thanh props cua component nay */
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MiniCart);

@@ -14,7 +14,10 @@ function IconMenu() {
             <input type="search"/>
             <input className="sb-sbm" type="submit" />
             {/* Menu Icon Cart */}
-            <a onClick={() => setMiniCart(prev => !prev)}>
+            <a 
+                className="cart-icon-menu"
+                onClick={() => setMiniCart(prev => !prev)}
+            >
                 <i className="fa fa-shopping-cart icon-menu" />
             </a>
             {/* Menu Icon Profile */}

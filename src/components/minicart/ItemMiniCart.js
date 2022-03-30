@@ -2,7 +2,8 @@ import React from "react";
 
 function ItemMiniCart(props) {
 
-    const {id, type, name, img, price, sale} = props;
+    const {id, type, name, img, price, sale} = props.product;
+    const quantity = props.quantity;
 
     return (
         <li className="minicart-item">
@@ -17,6 +18,7 @@ function ItemMiniCart(props) {
                 <p className="cart-item-type">{type}</p>
                 <span>{price}$</span>
                 {/* Maybe have option like: size,color,... at here */}
+                <p>Quantity: {quantity}</p>
             </div>
             </div>
             <div className="minicart-remove">

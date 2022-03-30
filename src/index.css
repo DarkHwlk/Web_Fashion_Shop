@@ -1,6 +1,7 @@
 .icon-menu {
     color: white !important;
     font-size: 23px !important;
+    cursor: pointer !important;
 }
 .fa-cart-plus{
     margin-left: 5px;

@@ -1,9 +1,27 @@
-
+import React, {Component} from "react";
+import {connect} from 'react-redux';
 /* Components */
 import CartItem from './cart/CartItem.js';
 import CartBill from './cart/CartBill.js'
 
-function Cart() {
+function Cart(props) {
+
+    const {cart} = props;
+
+    const showItems = () => {
+        let result = null;
+        result = cart.map((productInCart, index) => {
+            let {product, quantity} = productInCart;
+            return (
+            <CartItem
+                product={product}
+                quantity={quantity}
+            />);
+        })
+        return result;
+    }
+
+
     return (
         <div id="wrapper-content">
             {/* Tittle */}
@@ -30,7 +48,7 @@ function Cart() {
                         </thead>
                         {/* List items */}
                         <tbody>
-                            <CartItem/>
+                            {showItems()}
                         </tbody>
                     </table>
                 </div>
@@ -42,4 +60,17 @@ function Cart() {
     );
 }
 
-export default Cart;
+/* Chuyen state cua reducer thanh props cua component nay */
+const mapStateToProps = (state) => {
+    return { 
+        cart: state.cart,
+    };
+}
+/* Chuyen action thanh props cua component nay */
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

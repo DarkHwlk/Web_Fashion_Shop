@@ -1,3 +1,6 @@
+import React, {Component} from "react";
+import {connect} from 'react-redux';
+
 function CartBill() {
     return (
         <div className="cart-checkout">
@@ -23,4 +26,17 @@ function CartBill() {
     );
 }
 
-export default CartBill;
+/* Chuyen state cua reducer thanh props cua component nay */
+const mapStateToProps = (state) => {
+    return { 
+        cart: state.cart,
+    };
+}
+/* Chuyen action thanh props cua component nay */
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartBill);
