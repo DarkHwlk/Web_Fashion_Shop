@@ -3,7 +3,7 @@ import {v4} from 'uuid';
 /* Call API get products */
 var initialState = [
     {
-        id: v4(),
+        id: 1,
         type: "tshirt",
         name: "Green tshirt",
         price: 12,
@@ -12,7 +12,7 @@ var initialState = [
         img: "./Pictures/man_products/green_tshirt_man.jpg",
     },
     {
-        id: v4(),
+        id: 2,
         type: "tshirt",
         name: "Yellow tshirt",
         price: 10,
@@ -21,7 +21,7 @@ var initialState = [
         img: "./Pictures/man_products/yellow_tshirt_man.jpg",
     },
     {
-        id: v4(),
+        id: 3,
         type: "shirt",
         name: "Navy shirt",
         price: 20,
@@ -30,7 +30,7 @@ var initialState = [
         img: "./Pictures/man_products/navy_shirt_man.jpg",
     },
     {
-        id: v4(),
+        id: 4,
         type: "shirt",
         name: "Caro tshirt",
         price: 18,
@@ -39,7 +39,7 @@ var initialState = [
         img: "./Pictures/man_products/caro_shirt_man.jpg",
     },
     {
-        id: v4(),
+        id: 5,
         type: "shirt",
         name: "Blue shirt",
         price: 18,
@@ -48,7 +48,7 @@ var initialState = [
         img: "./Pictures/man_products/blue_shirt_man.jpg",
     },
     {
-        id: v4(),
+        id: 6,
         type: "jeans",
         name: "Blue jeans",
         price: 30,
@@ -57,7 +57,7 @@ var initialState = [
         img: "./Pictures/man_products/blue_jean_man.jpg",
     },
     {
-        id: v4(),
+        id: 7,
         type: "jeans",
         name: "Silver jeans",
         price: 30,
@@ -66,7 +66,7 @@ var initialState = [
         img: "./Pictures/man_products/silver_jean_man.jpg",
     },
     {
-        id: v4(),
+        id: 8,
         type: "shorts",
         name: "Blue shorts",
         price: 20,

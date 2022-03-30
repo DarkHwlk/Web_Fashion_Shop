@@ -23,7 +23,7 @@ function ItemMiniCart(props) {
             </div>
             <div className="minicart-remove">
                 <button>
-                    <i class="fa fa-close"/>
+                    <i className="fa fa-close"/>
                 </button>
             </div>
         </li>

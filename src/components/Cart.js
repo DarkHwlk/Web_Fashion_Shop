@@ -16,6 +16,7 @@ function Cart(props) {
             <CartItem
                 product={product}
                 quantity={quantity}
+                key={index}
             />);
         })
         return result;

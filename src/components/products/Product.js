@@ -1,8 +1,18 @@
 import React from "react";
+import {connect} from 'react-redux';
+
+import * as actions from '../../actions/index';
 
 function Product(props) {
 
-    const {id, type, name, img, status, price, sale} = props;
+    const {product, onAddToCart} = props;
+    const {id, type, name, img, status, price, sale} = product;
+
+    const clickAddToCart = (product, status) => {
+        if(status===true){  //available
+            onAddToCart(product);
+        }
+    }
 
     return (
         <li>
@@ -19,15 +29,45 @@ function Product(props) {
                     <div className="product-info">
                         <a href="#" className="product-cat">{type}</a>
                         <a href="#" className="product-name">{name}</a>
-                        <div className="product-price">${sale} <span>${price}</span></div>
+                        {sale ? 
+                            <div className="product-price">${sale} <span>${price}</span></div>
+                        :   <div className="product-price">${price}</div>}
                         {status ? <span className="product-status-available">available</span> : <span className="product-status-soldout">sold out</span>}
                     </div>
-                    {status ? <button className="buy-now">BUY NOW <i className="fa fa-cart-plus"/></button>
-                     : <button className="cannot-buy">BUY NOW <i className="fa fa-cart-plus"/></button>}
+                    {status ? 
+                        <button 
+                            className="buy-now"
+                            onClick={() => clickAddToCart(product, true)}
+                        >
+                            BUY NOW 
+                            <i className="fa fa-cart-plus"/>
+                        </button>
+                    :   <button 
+                            className="cannot-buy"
+                            onClick={() => clickAddToCart(product, false)}
+                        >
+                            BUY NOW 
+                            <i className="fa fa-cart-plus"/>
+                        </button>}
                 </div>
             </div>
         </li>
     );
 }
 
-export default Product;
+/* Chuyen state cua reducer thanh props cua component nay */
+const mapStateToProps = (state) => {
+    return { 
+        
+    };
+}
+/* Chuyen action thanh props cua component nay */
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onAddToCart: (product) => {
+            dispatch(actions.actAddToCart(product, 1));
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

@@ -14,9 +14,8 @@ function Products(props) {
         result = products.map((product, index) => {
             return (
             <Product
-                key={index} type={product.type} img={product.img}
-                id={product.id} name={product.name} status={product.status}
-                price={product.price} sale={product.sale}
+                product={product}
+                key={index}
             />);
         })
         return result;

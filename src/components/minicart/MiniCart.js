@@ -18,6 +18,7 @@ function MiniCart(props) {
             <ItemMiniCart
                 product={product}
                 quantity={quantity}
+                key={index}
             />);
         })
         return result;
@@ -28,7 +29,7 @@ function MiniCart(props) {
             <div className="minicart-heading">
                 5 products in cart
                 <button onClick={() => onClose()}>
-                    <i class="fa fa-close"/>
+                    <i className="fa fa-close"/>
                 </button>
             </div>
             <ul className="minicart-items">

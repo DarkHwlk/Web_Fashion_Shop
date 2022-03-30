@@ -1,4 +1,4 @@
-import * as types from './../constants/ActionType'
+import * as types from './ActionTypes'
 
 // Add products
 export const actAddToCart = (product, quantity) => {
