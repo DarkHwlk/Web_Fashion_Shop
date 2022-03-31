@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import './css/cart.css';
 import './css/menu_cart.css';
+import './css/notice.css';
 
 /* store */
 import {createStore} from 'redux';

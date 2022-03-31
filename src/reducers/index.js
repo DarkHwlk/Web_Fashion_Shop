@@ -2,10 +2,12 @@ import {combineReducers} from 'redux';
 
 import products from './products';
 import cart from './cart';
+import notice from './notice';
 
 const myReducer = combineReducers({
     products,  //products of web
     cart,
+    notice,
 });
 
 export default myReducer;

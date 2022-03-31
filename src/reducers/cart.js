@@ -1,5 +1,5 @@
 import * as types from '../actions/ActionTypes'
-import * as MESSAGE from '../constants/message'
+import * as NOTICE from '../constants/notice'
 /* get data from local storage */
 var data = JSON.parse(localStorage.getItem('FASHION_CART'));
 var initialState = data ? data : [];
@@ -19,7 +19,6 @@ const cart = (state = initialState, action) => {
                     quantity: quantity
                 });
             }
-            pushMessageToClient(MESSAGE.MSG_ADD_TO_CART_SUCCESS);
 
             localStorage.setItem("FASHION_CART", JSON.stringify(state));
             return [...state];
@@ -29,7 +28,6 @@ const cart = (state = initialState, action) => {
             if(index !== -1){  // exist product in cart
                 state.splice(index,1);  //delete this item
             }
-            pushMessageToClient(MESSAGE.MSG_DELETE_PRODUCT_IN_CART_SUCCESS);
 
             localStorage.setItem("FASHION_CART", JSON.stringify(state));
             return [...state];
@@ -40,7 +38,6 @@ const cart = (state = initialState, action) => {
                 state[index].product = product;
                 state[index].quantity = quantity;
             }
-            pushMessageToClient(MESSAGE.MSG_UPDATE_TO_CART_SUCCESS);
 
             localStorage.setItem("FASHION_CART", JSON.stringify(state));
             return [...state];
@@ -60,8 +57,8 @@ var findProductInCart = (cart, product) => {
     return index;
 }
 
-var pushMessageToClient = (message) => {
-    console.log(message);
+var pushNoticeToClient = (notice) => {
+    console.log(notice);
 }
 
 export default cart;

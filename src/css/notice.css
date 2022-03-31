@@ -1,0 +1,40 @@
+.container-alert{
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    opacity: 1;
+    animation: fade 4s linear forwards;
+}
+@keyframes fade {
+    0%,100% { opacity: 0 }
+    15%,75% { opacity: 1 }
+  }
+div.container-alert .alert-danger {
+    padding: 20px;
+    background-color: #f44336;
+    margin: 0 200px;
+}
+div.container-alert .alert-success {
+    padding: 20px;
+    background-color: #04AA6D;
+    margin: 0 200px;
+} 
+div.container-alert .alert-warning {
+    padding: 20px;
+    background-color: #ff9800;
+    margin: 0 200px;
+} 
+div.container-alert .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+div.container-alert .closebtn:hover {
+    color: black;
+}

@@ -5,12 +5,20 @@ import * as actions from '../../actions/index';
 
 function Product(props) {
 
-    const {product, onAddToCart} = props;
+    const {product, onAddToCart, onChangeStatusNotice, 
+        onChangeContentNotice, onChangeTypeNotice} = props;
     const {id, type, name, img, status, price, sale} = product;
 
     const clickAddToCart = (product, status) => {
-        if(status===true){  //available
+        if(status===true){  // available
             onAddToCart(product);
+            onChangeContentNotice(`You have added ${name} to your cart.`);
+            onChangeTypeNotice("SUCCESS"); 
+            onChangeStatusNotice(true);
+        }else{  // sold out
+            onChangeContentNotice(`This product is sold out.`);
+            onChangeTypeNotice("WARNING"); 
+            onChangeStatusNotice(true);
         }
     }
 
@@ -66,6 +74,15 @@ const mapDispatchToProps = (dispatch, props) => {
     return {
         onAddToCart: (product) => {
             dispatch(actions.actAddToCart(product, 1));
+        },
+        onChangeStatusNotice: (status) => {
+            dispatch(actions.actChangeStatusNotice(status));
+        },
+        onChangeContentNotice: (content) => {
+            dispatch(actions.actChangeContentNotice(content));
+        },
+        onChangeTypeNotice: (typeNotice) => {
+            dispatch(actions.actChangeTypeNotice(typeNotice));
         },
     }
 }

@@ -32,3 +32,27 @@ export const actUpdateQuantityProductInCart = (product, quantity) => {
         quantity,
     }
 }
+
+// Show/Hide Notice
+export const actChangeStatusNotice = (status) => {
+    return{
+        type: types.CHANGE_STATUS_NOTICE,
+        status,
+    }
+}
+
+// Change Content Notice
+export const actChangeContentNotice = (content) => {
+    return{
+        type: types.CHANGE_CONTENT_NOTICE,
+        content,
+    }
+}
+
+// Change Type Notice
+export const actChangeTypeNotice = (typeNotice) => {
+    return{
+        type: types.CHANGE_TYPE_NOTICE,
+        typeNotice,
+    }
+}

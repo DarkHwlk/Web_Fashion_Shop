@@ -11,6 +11,7 @@ import Profile from "./components/Profile";
 import Cart from "./components/Cart";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
+import Notice from "./components/Notice";
 
 function App() {
 
@@ -47,6 +48,9 @@ function App() {
         <div id="footer">
             <h1>Footer</h1>
         </div>
+        
+        {/* Notice */}
+        <Notice/>
       </div>
     </Router>
   );

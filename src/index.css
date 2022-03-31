@@ -241,6 +241,7 @@ ul.products li .product-top:hover a.detail{
 .product-info-buy div.product-price span{
     color: #666666;
     text-decoration: line-through;
+    margin-left: 10px;
 }
 .product-info-buy .product-status-available{
     color: #3867d6;
