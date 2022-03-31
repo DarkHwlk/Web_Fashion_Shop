@@ -1,25 +1,62 @@
-import React, {Component} from "react";
+import React from "react";
 import {connect} from 'react-redux';
 
-function CartBill() {
+function CartBill(props) {
+
+    const {cart} = props;
+
+    const totalOldPrice = (cart) => {
+        let result = 0;
+        if(cart.length>0){
+            result = cart.reduce((total, item) => {
+                return total+item.product.price*item.quantity;
+            },0);
+        }
+        return result;
+    }
+
+    const totalDiscount = (cart) => {
+        let result = 0;
+        if(cart.length>0){
+            result = cart.reduce((total, item) => {
+                return total+(item.product.price-item.product.sale)*item.quantity;
+            },0);
+        }
+        return result;
+    }
+
+    const totalCurrentPrice = (cart) => {
+        let result = 0;
+        if(cart.length>0){
+            result = cart.reduce((total, item) => {
+                if(item.product.sale>0)  //if sale > 0
+                    return total+item.product.sale*item.quantity;
+                else return total+item.product.price*item.quantity;
+            },0);
+        }
+        return result;
+    }
+
     return (
         <div className="cart-checkout">
             <div className="cart-content-title">
                 <h2>Bill</h2>
             </div>
             <table className="cart-table-checkout">
+                <tbody>
                 <tr>
                     <th>Price:</th>
-                    <td>100$</td>
+                    <td>{totalOldPrice(cart)}$</td>
                 </tr>
                 <tr>
                     <th className="cart-total-discount">Discount:</th>
-                    <td className="cart-total-discount">20$</td>
+                    <td className="cart-total-discount">{totalDiscount(cart)}$</td>
                 </tr>
                 <tr>
                     <th className="cart-total-final">Total:</th>
-                    <td className="cart-total-final">80$</td>
+                    <td className="cart-total-final">{totalCurrentPrice(cart)}$</td>
                 </tr>
+                </tbody>
             </table>
             <button className="btn-checkout-order">ORDER</button>
         </div>

@@ -1,13 +1,28 @@
 import React, { useState } from 'react';
+import {connect} from 'react-redux';
 /* Router */
 import {NavLink} from 'react-router-dom';
 
 /* Components */
 import MiniCart from "../minicart/MiniCart";
 
-function IconMenu() {
+function IconMenu(props) {
+
+    const {cart} = props;
 
     const [miniCart,setMiniCart] = useState(false);  //default is hide
+
+    const showQuantityItemInCart = (cart) => {
+        let result = null;
+        if(cart.length>0){
+            result = <span className="icon-menu-quantity-item">
+                        {cart.reduce((total, item) => {
+                            return total + item.quantity;
+                        },0)}
+                    </span>;
+        }
+        return result;
+    }
 
     return (
         <div className='hide-small'>
@@ -23,6 +38,7 @@ function IconMenu() {
             {/* Menu Icon Profile */}
             <NavLink to='/profile'>
                 <i className="fa fa-user icon-header icon-menu" />
+                {showQuantityItemInCart(cart)}
             </NavLink>
             {/* Mini cart */}
             {miniCart ? <MiniCart onClose={() => setMiniCart(prev => !prev)}/> : null}
@@ -30,4 +46,17 @@ function IconMenu() {
     );
 }
 
-export default IconMenu;
+/* Chuyen state cua reducer thanh props cua component nay */
+const mapStateToProps = (state) => {
+    return { 
+        cart: state.cart,
+    };
+}
+/* Chuyen action thanh props cua component nay */
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(IconMenu);

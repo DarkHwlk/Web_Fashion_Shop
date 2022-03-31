@@ -1,23 +1,8 @@
 import * as types from '../actions/ActionTypes'
 import * as MESSAGE from '../constants/message'
 /* get data from local storage */
-// var data = JSON.parse(localStorage.getItem('FASHION_CART'));
-// var initialState = data ? data : [];
-
-var initialState = [
-    {
-        product: {
-            id: 1,
-            type: "tshirt",
-            name: "Green tshirt",
-            price: 12,
-            sale: 8,
-            status: false,  //con hang
-            img: "./Pictures/man_products/green_tshirt_man.jpg",
-        },
-        quantity: 2,
-    },
-];
+var data = JSON.parse(localStorage.getItem('FASHION_CART'));
+var initialState = data ? data : [];
 
 const cart = (state = initialState, action) => {
     let {product, quantity} = action;
@@ -36,7 +21,28 @@ const cart = (state = initialState, action) => {
             }
             pushMessageToClient(MESSAGE.MSG_ADD_TO_CART_SUCCESS);
 
-            //localStorage.setItem("FASHION_CART", JSON.stringify(state));
+            localStorage.setItem("FASHION_CART", JSON.stringify(state));
+            return [...state];
+
+        case types.DELETE_PRODUCT_IN_CART:
+            index = findProductInCart(state, product);
+            if(index !== -1){  // exist product in cart
+                state.splice(index,1);  //delete this item
+            }
+            pushMessageToClient(MESSAGE.MSG_DELETE_PRODUCT_IN_CART_SUCCESS);
+
+            localStorage.setItem("FASHION_CART", JSON.stringify(state));
+            return [...state];
+
+        case types.UPDATE_QUANTITY_PRODUCT_IN_CART:
+            index = findProductInCart(state, product);
+            if(index !== -1){  // exist product in cart
+                state[index].product = product;
+                state[index].quantity = quantity;
+            }
+            pushMessageToClient(MESSAGE.MSG_UPDATE_TO_CART_SUCCESS);
+
+            localStorage.setItem("FASHION_CART", JSON.stringify(state));
             return [...state];
 
         default: return [...state];

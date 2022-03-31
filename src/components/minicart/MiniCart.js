@@ -24,6 +24,18 @@ function MiniCart(props) {
         return result;
     }
 
+    const totalCurrentPrice = (cart) => {
+        let result = 0;
+        if(cart.length>0){
+            result = cart.reduce((total, item) => {
+                if(item.product.sale>0)  //if sale > 0
+                    return total+item.product.sale*item.quantity;
+                else return total+item.product.price*item.quantity;
+            },0);
+        }
+        return result;
+    }
+
     return (
         <div className="minicart-container">
             <div className="minicart-heading">
@@ -42,7 +54,7 @@ function MiniCart(props) {
             </div>
             <div className="minicart-total">
                 <span>Current total:</span>
-                <span>80$</span>
+                <span>{totalCurrentPrice(cart)}$</span>
             </div>
         </div>
     );

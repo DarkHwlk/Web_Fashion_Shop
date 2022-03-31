@@ -1,7 +1,7 @@
 function Profile() {
     return (
         <div id="wrapper-content">
-            <div class="headline">
+            <div className="headline">
                 <h3>PROFILE</h3>
             </div>
         </div>

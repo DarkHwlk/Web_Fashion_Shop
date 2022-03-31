@@ -25,9 +25,9 @@ export const actDeleteProductInCart = (product) => {
 }
 
 // Update quantity, option
-export const actUpdateProductInCart = (product, quantity) => {
+export const actUpdateQuantityProductInCart = (product, quantity) => {
     return{
-        type: types.UPDATE_PRODUCT_IN_CART,
+        type: types.UPDATE_QUANTITY_PRODUCT_IN_CART,
         product,
         quantity,
     }

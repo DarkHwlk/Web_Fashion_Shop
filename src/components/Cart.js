@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import {connect} from 'react-redux';
 /* Components */
 import CartItem from './cart/CartItem.js';
@@ -26,7 +26,7 @@ function Cart(props) {
     return (
         <div id="wrapper-content">
             {/* Tittle */}
-            <div class="headline">
+            <div className="headline">
                 <h3>CART</h3>
             </div>  
             {/* Cart container */}

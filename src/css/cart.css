@@ -50,6 +50,24 @@ table.cart-table-items tbody tr{
     width: 5%;
     text-align: center;
 }
+.col-check>div{
+    position: relative;
+}
+.col-check>div>button{
+    position: absolute;
+    top: -55px;
+    right: 0px;
+    background-color: transparent;
+    border: none;
+    display: none;
+    cursor: pointer;
+}
+.col-check>div>button>i{
+    font-size: 15px;
+}
+tr:hover>.col-check>div>button{
+    display: block;
+}
 .col-check>input{
     width: 15px;
     height: 15px;
@@ -85,7 +103,7 @@ table.cart-table-items tbody tr td{
 }
 .cart-item-old-price{
     text-decoration: line-through;
-    color: #353b48;
+    color: #666666;
     font-weight: 600;
 }
 .cart-item-quantity{

@@ -56,11 +56,24 @@ li.minicart-item .minicart-item-detail>a{
 }
 li.minicart-item:hover .minicart-item-detail>a{
     text-decoration: underline;
-    color: #353b48;
+    color: #111;;
 }
 li.minicart-item .minicart-item-detail>p{
     margin-top: 10px;
     font-size: 13px;
+}
+li.minicart-item .minicart-item-detail div{
+    margin-top: 10px;
+    display: flex;
+}
+li.minicart-item .minicart-item-detail div .minicart-item-price{
+    font-weight: bold;
+    margin-right: 10px;
+}
+li.minicart-item .minicart-item-detail div .minicart-item-oldprice{
+    font-weight: bold;
+    text-decoration: line-through;
+    color: #666666;
 }
 li.minicart-item .minicart-remove{
     position: relative;
