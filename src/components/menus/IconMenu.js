@@ -36,7 +36,7 @@ function IconMenu(props) {
                 <i className="fa fa-shopping-cart icon-menu" />
             </a>
             {/* Menu Icon Profile */}
-            <NavLink to='/profile'>
+            <NavLink to='/profile' className="profile-icon-menu">
                 <i className="fa fa-user icon-header icon-menu" />
                 {showQuantityItemInCart(cart)}
             </NavLink>

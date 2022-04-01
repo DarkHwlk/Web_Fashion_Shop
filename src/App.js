@@ -7,7 +7,7 @@ import routes_categorys from "./constants/routes_categorys";
 
 /* Components */
 import Menu from "./components/Menu";
-import Profile from "./components/Profile";
+import Profile from "./components/ProfileContainer";
 import Cart from "./components/Cart";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
@@ -45,9 +45,9 @@ function App() {
         </Routes>
 
         {/* <!--Footer--> */}
-        <div id="footer">
+        {/* <div id="footer">
             <h1>Footer</h1>
-        </div>
+        </div> */}
         
         {/* Notice */}
         <Notice/>
