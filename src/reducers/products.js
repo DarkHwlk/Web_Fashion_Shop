@@ -1,5 +1,3 @@
-import {v4} from 'uuid';
-
 /* Call API get products */
 var initialState = [
     {

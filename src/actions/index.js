@@ -41,18 +41,41 @@ export const actChangeStatusNotice = (status) => {
     }
 }
 
-// Change Content Notice
-export const actChangeContentNotice = (content) => {
+// Change Notice
+export const actChangeNotice = (content, typeNotice) => {
     return{
-        type: types.CHANGE_CONTENT_NOTICE,
+        type: types.CHANGE_NOTICE,
         content,
+        typeNotice,
     }
 }
 
-// Change Type Notice
-export const actChangeTypeNotice = (typeNotice) => {
+// Login
+export const actLogin = (account) => {
     return{
-        type: types.CHANGE_TYPE_NOTICE,
-        typeNotice,
+        type: types.LOGIN,
+        account,
+    }
+}
+
+// Register
+export const actRegister = (account) => {
+    return{
+        type: types.REGISTER_NEW_ACCOUNT,
+        account,
+    }
+}
+
+// Clear loginSuccess
+export const actClearLoginSuccess = () => {
+    return{
+        type: types.CLEAR_LOGIN_SUCCESS,
+    }
+}
+
+// Clear existingAccount
+export const actClearExistingAccount = () => {
+    return{
+        type: types.CLEAR_EXISTING_ACCOUNT,
     }
 }

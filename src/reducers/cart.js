@@ -57,8 +57,4 @@ var findProductInCart = (cart, product) => {
     return index;
 }
 
-var pushNoticeToClient = (notice) => {
-    console.log(notice);
-}
-
 export default cart;

@@ -13,12 +13,9 @@ const notice = (state = initialState, action) => {
         case types.CHANGE_STATUS_NOTICE:
             state.status = status;
             return {...state};
-
-        case types.CHANGE_CONTENT_NOTICE:
+        
+        case types.CHANGE_NOTICE:
             state.content = content;
-            return {...state};
-
-        case types.CHANGE_TYPE_NOTICE:
             state.typeNotice = typeNotice;
             return {...state};
 
