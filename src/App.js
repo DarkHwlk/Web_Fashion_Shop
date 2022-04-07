@@ -15,7 +15,8 @@ import Cart from "./components/Cart";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import Notice from "./components/Notice";
-import Login from "./components/login/Login";
+import FormLogin from "./components/login/FormLogin";
+import FormRegister from "./components/login/FormRegister";
 
 function App(props) {
 
@@ -47,7 +48,8 @@ function App(props) {
               element = {statusLogin?<Profile/>:<Navigate to='/login'/>}/>
             <Route 
               path="login" //MNeu da dang nhap thi dieu huong den /profile
-              element = {statusLogin?<Navigate to='/profile'/>:<Login/>}/>
+              element = {statusLogin?<Navigate to='/profile'/>:<FormLogin/>}/>
+            <Route path="register" element = {<FormRegister/>}/>  
             <Route path="cart" element = {<Cart/>}/>
             {/* Category Routes */}
             {addCategoryRoutes()}

@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from "react";
 import {connect} from 'react-redux';
+/* Router */
+import {NavLink} from 'react-router-dom';
 
 import * as actions from '../../actions/index';
 
 function FormLogin(props) {
 
-    const {accounts, onRegister, onLogin, onClearLoginSuccess,
+    const {accounts, onLogin, onClearLoginSuccess,
         onChangeStatusNotice, onChangeNotice} = props;
 
     const {loginSuccess} = accounts;
@@ -56,47 +58,54 @@ function FormLogin(props) {
     }
 
     return (
-        <div id="wrapper-login">
-            <form id="form-login">
-                <h1 className="form-header">Login form</h1>
-                <div className="form-group">
-                    <i className="fas fa-user"/>
-                    <input 
-                        type="email" className="form-input" 
-                        placeholder="Email" name="email" 
-                        value={account.email}
-                        onChange={(e) => onChange(e)}    
+        <div id="wrapper-content">
+            <div id="wrapper-login">
+                <form id="form-login">
+                    <h1 className="form-header">Login form</h1>
+                    <div className="form-group">
+                        <i className="fas fa-user"/>
+                        <input 
+                            type="email" className="form-input" 
+                            placeholder="Email" name="email" 
+                            value={account.email}
+                            onChange={(e) => onChange(e)}    
+                        />
+                    </div>
+                    <div className="form-group">
+                        <i className="fas fa-key"></i>
+                        <input 
+                            type={showPassword ? "text" : "password"} 
+                            className="form-input passWord" 
+                            placeholder="Password" name="password" 
+                            value={account.password}
+                            onChange={(e) => onChange(e)}  
+                        />
+                        <div id="eye">
+                            {buttonShowPassword(showPassword)}
+                        </div>
+                    </div>
+                    <div className="form-check-ask">
+                        <div>
+                            <input type="checkbox" value="LOGIN" className="form-check"/>
+                            <span>Remember me</span>
+                        </div>
+                        <div>
+                            <a>Forgot password?</a>
+                        </div>
+                    </div>
+                    <input type="submit" value="LOGIN" className="form-submit"
+                        onClick={(e) => clickLogin(e)}
                     />
-                </div>
-                <div className="form-group">
-                    <i className="fas fa-key"></i>
-                    <input 
-                        type={showPassword ? "text" : "password"} 
-                        className="form-input passWord" 
-                        placeholder="Password" name="password" 
-                        value={account.password}
-                        onChange={(e) => onChange(e)}  
-                    />
-                    <div id="eye">
-                        {buttonShowPassword(showPassword)}
-                    </div>
-                </div>
-                <div className="form-check-ask">
-                    <div>
-                        <input type="checkbox" value="LOGIN" className="form-check"/>
-                        <span>Remember me</span>
-                    </div>
-                    <div>
-                        <a>Forgot password?</a>
-                    </div>
-                </div>
-                <input type="submit" value="LOGIN" className="form-submit"
-                    onClick={(e) => clickLogin(e)}
-                />
-                <input type="submit" value="REGISTER" className="form-submit"
-                    onClick={() => onRegister()}
-                />
-            </form>
+                    <NavLink to='/register'>
+                        <input type="submit" value="REGISTER" 
+                            className="form-submit"
+                        />
+                    </NavLink>
+                </form>
+            </div>
+            <div className="bg-login">
+                <img src="./Pictures/bg-login.jpg"/>
+            </div>
         </div>
     );
 }

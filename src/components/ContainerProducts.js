@@ -2,6 +2,7 @@ import React from "react";
 
 /* Components */
 import Products from "./products/Products";
+import ContainerFilterProducts from "./products_filter/ContainerFilterProducts";
 
 function ContainerProducts() {
     return (
@@ -10,6 +11,8 @@ function ContainerProducts() {
         <div className="headline">
             <h3>HOT MAN ITEMS</h3>
         </div>
+        {/* Block filter */}
+        <ContainerFilterProducts/>
         {/* Products */}
         <Products/>
         {/* Index */}

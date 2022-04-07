@@ -9,6 +9,7 @@ import './css/cart.css';
 import './css/menu_cart.css';
 import './css/notice.css';
 import './css/login.css';
+import './css/products.css';
 
 /* store */
 import {createStore} from 'redux';
