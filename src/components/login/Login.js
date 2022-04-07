@@ -7,7 +7,7 @@ import FormRegister from "./FormRegister";
 
 function Login() {
 
-    const [login, setLogin]  =useState(true);
+    const [login, setLogin] = useState(true);
 
     return (
         <div id="wrapper-content">

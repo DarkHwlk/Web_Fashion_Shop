@@ -6,7 +6,11 @@ import Login from "./login/Login";
 
 function ProfileContainer() {
     return (
-        <Login/>
+        <div id="wrapper-content">
+            <div className="headline">
+                <h3>PROFILE</h3>
+            </div>
+        </div>
     );
 }
 

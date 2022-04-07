@@ -36,10 +36,20 @@ function MiniCart(props) {
         return result;
     }
 
+    const quantityProducts = (cart) => {
+        let result = 0;
+        if(cart.length>0){
+            result = cart.reduce((total, item) => {
+                return total+item.quantity;
+            },0);
+        }
+        return result;
+    }
+
     return (
         <div className="minicart-container">
             <div className="minicart-heading">
-                5 products in cart
+                {quantityProducts(cart)} products in cart
                 <button onClick={() => onClose()}>
                     <i className="fa fa-close"/>
                 </button>

@@ -1,4 +1,7 @@
 import React from "react";
+import {connect} from 'react-redux';
+
+import * as actions from './actions/index';
 /* Router */
 import {BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
 
@@ -12,8 +15,13 @@ import Cart from "./components/Cart";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import Notice from "./components/Notice";
+import Login from "./components/login/Login";
 
-function App() {
+function App(props) {
+
+  const {accounts} = props;
+
+  const {statusLogin} = accounts;
 
     const addCategoryRoutes = () => {
         let result = null;
@@ -34,7 +42,12 @@ function App() {
         {/* <!--Content--> */}
         <Routes>
             <Route path="/" element = {<Home/>}/>
-            <Route path="profile" element = {<Profile/>}/>
+            <Route 
+              path="profile" // Neu chua dang nhap thi dieu huong den /login
+              element = {statusLogin?<Profile/>:<Navigate to='/login'/>}/>
+            <Route 
+              path="login" //MNeu da dang nhap thi dieu huong den /profile
+              element = {statusLogin?<Navigate to='/profile'/>:<Login/>}/>
             <Route path="cart" element = {<Cart/>}/>
             {/* Category Routes */}
             {addCategoryRoutes()}
@@ -56,4 +69,17 @@ function App() {
   );
 }
 
-export default App;
+/* Chuyen state cua reducer thanh props cua component nay */
+const mapStateToProps = (state) => {
+  return { 
+      accounts: state.accounts,
+  };
+}
+/* Chuyen action thanh props cua component nay */
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+      
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

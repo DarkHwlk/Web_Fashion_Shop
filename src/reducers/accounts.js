@@ -37,8 +37,9 @@ const accounts = (state = initialState, action) => {
                 // existing account
                 state.existingAccount = true;
             }else{  // not existing account
-                state[index].account = account;
+                state.accounts.push(account);
             }
+            console.log(state);
             return {...state};
 
         case types.CLEAR_LOGIN_SUCCESS:

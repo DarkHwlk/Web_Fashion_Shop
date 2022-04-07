@@ -18,6 +18,9 @@ body{
     color: #111;
     line-height: 1.15;
 }
+button{
+    cursor: pointer;
+}
 #wrapper{
     margin: 0 auto;  /*Can giua*/
     transition: 0.5s;

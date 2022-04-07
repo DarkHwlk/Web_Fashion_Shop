@@ -13,7 +13,6 @@ function FormLogin(props) {
     const [showPassword, setShowPassword] = useState(false);  //default hide password
 
     useEffect(() => {
-        console.log(loginSuccess)
         if(loginSuccess==="SUCCESS"){
             onChangeNotice(`Login is successful.`,"SUCCESS");
             onChangeStatusNotice(true);
@@ -46,7 +45,6 @@ function FormLogin(props) {
 
     const clickLogin = (e) => {
         e.preventDefault();
-        console.log(account);
         onLogin(account);
     }
 
