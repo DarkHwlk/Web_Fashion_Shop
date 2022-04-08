@@ -1,18 +1,21 @@
 import * as types from './ActionTypes'
 
-// Add products
+/* actions products */
+// Sort products
+export const actSortPriceProducts = (sort) => {  //status=true->Low2High | status=false->High2Low
+    return{
+        type: types.SORT_PRICE_PRODUCTS,
+        sort,
+    }
+}
+
+/* actions cart */
+// Add products to cart
 export const actAddToCart = (product, quantity) => {
     return{
         type: types.ADD_TO_CART,
         product,  // product: product
         quantity,  // quantity: quantity
-    }
-}
-
-export const actChangeMessage = (message) => {
-    return{
-        type: types.CHANGE_MESSAGE,
-        message,
     }
 }
 
@@ -33,6 +36,7 @@ export const actUpdateQuantityProductInCart = (product, quantity) => {
     }
 }
 
+/* actions notice */
 // Show/Hide Notice
 export const actChangeStatusNotice = (status) => {
     return{
@@ -50,6 +54,7 @@ export const actChangeNotice = (content, typeNotice) => {
     }
 }
 
+/* actions login */
 // Login
 export const actLogin = (account) => {
     return{

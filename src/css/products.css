@@ -33,6 +33,12 @@
     right: 0px;
     top: 35px;
     padding: 10px 0px;
+    transition: 0.4s;
+    display: none;
+}
+.block-products-filter .products-sort:hover .products-sort-list{
+    display: block;
+    transition: 0.4s;
 }
 .products-sort .products-sort-list p{
     padding: 5px 20px;

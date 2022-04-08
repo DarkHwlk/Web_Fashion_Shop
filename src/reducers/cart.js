@@ -1,5 +1,4 @@
 import * as types from '../actions/ActionTypes'
-import * as NOTICE from '../constants/notice'
 /* get data from local storage */
 var data = JSON.parse(localStorage.getItem('FASHION_CART'));
 var initialState = data ? data : [];

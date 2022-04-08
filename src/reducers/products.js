@@ -1,3 +1,4 @@
+import * as types from '../actions/ActionTypes';
 /* Call API get products */
 var initialState = [
     {
@@ -75,6 +76,7 @@ var initialState = [
 ];
 
 const products = (state = initialState, action) => {
+    let {sort} = action
     switch(action.type){
 
         default: return [...state];
