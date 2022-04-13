@@ -1,3 +1,4 @@
+/* sort products */
 .block-products-filter{
     display: flex;
     justify-content: right;
@@ -11,6 +12,7 @@
     display: flex;
     transition: 0.4s;
     position: relative;
+    cursor: pointer;
 }
 .block-products-filter .products-sort:hover{
     background-color: #dcdde1;
@@ -50,4 +52,61 @@
 }
 .hide{
     display: none!important;
+}
+/* filter products */
+.block-products-filter .products-filter{
+    background-color: #f5f6fa;
+    padding: 10px 15px;
+    text-align: center;
+    display: flex;
+    transition: 0.4s;
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.block-products-filter .products-filter:hover{
+    background-color: #dcdde1;
+}
+.block-products-filter .products-filter .products-filter-title{
+    font-weight: bold;
+    color: #da291c;
+    margin-right: 5px;
+}
+.block-products-filter .products-filter .products-filter-title i{
+    color: #111;
+    margin-left: 5px;
+}
+.block-products-filter .products-filter .products-filter-options{
+    background-color: #f5f6fa;
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    top: 35px;
+    padding: 20px 10px;
+}
+.products-filter .products-filter-options table{
+    
+}
+.products-filter .products-filter-options table th{
+    width: 100px;
+    padding-bottom: 7px;
+    font-size: 16px;
+}
+.products-filter .products-filter-options table td{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.products-filter .products-filter-options table td i{
+    margin-left: 5px;
+}
+.products-filter .products-filter-options table td p{
+    width: 120px;
+    padding: 7px 0px;
+    margin: 5px 10px;
+}
+.products-filter .products-filter-options table td p:hover{
+    background-color: #dcdde1;
+}
+.products-filter .products-filter-options table td p .filter-check{
+    color: #44bd32;
 }

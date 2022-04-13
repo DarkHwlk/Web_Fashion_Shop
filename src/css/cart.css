@@ -46,14 +46,14 @@ table.cart-table-items tbody tr{
     width: 12%;
     text-align: center;
 }
-.col-check{
+/* .col-check{
     width: 5%;
     text-align: center;
-}
-.col-check>div{
+} */
+.col-total>div{
     position: relative;
 }
-.col-check>div>button{
+.col-total>div>button{
     position: absolute;
     top: -55px;
     right: 0px;
@@ -62,13 +62,13 @@ table.cart-table-items tbody tr{
     display: none;
     cursor: pointer;
 }
-.col-check>div>button>i{
+.col-total>div>button>i{
     font-size: 15px;
 }
-tr:hover>.col-check>div>button{
+tr:hover>.col-total>div>button{
     display: block;
 }
-.col-check>input{
+.col-total>input{
     width: 15px;
     height: 15px;
 }

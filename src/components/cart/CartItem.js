@@ -63,9 +63,6 @@ function CartItem(props) {
             </div>
         </td>
         <td className="col-total">
-            <p className="cart-item-total">{calculateTotal(price, quantity)}$</p>
-        </td>
-        <td className="col-check">
             <div>
                 <button
                     onClick={() => clickDeleteInCart(product)}
@@ -73,7 +70,7 @@ function CartItem(props) {
                     <i className="fa fa-close"/>
                 </button>
             </div>
-            <input type="checkbox"/>
+            <p className="cart-item-total">{calculateTotal(price, quantity)}$</p>
         </td>
     </tr>
     );

@@ -1,6 +1,6 @@
 import * as types from '../actions/ActionTypes';
 /* Call API get products */
-var initialState = ""
+var initialState = "LOW_TO_HIGH"
 
 const sort_products = (state = initialState, action) => {
     let {sort} = action

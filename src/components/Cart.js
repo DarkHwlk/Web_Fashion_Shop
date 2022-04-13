@@ -22,6 +22,16 @@ function Cart(props) {
         return result;
     }
 
+    const quantityAllItemInCart = (cart) => {
+        let result = 0;
+        if(cart.length>0){
+            result = cart.reduce((total, item) => {
+                return total + item.quantity;
+            },0);
+        }
+        return result;
+    }
+
 
     return (
         <div id="wrapper-content">
@@ -33,7 +43,7 @@ function Cart(props) {
             <div className="cart-container">
                 <div className="cart-content">
                     <div className="cart-content-title">
-                        <h2>5 products</h2>
+                        <h2>{quantityAllItemInCart(cart)} products</h2>
                     </div>
                     <table className="cart-table-items">
                         <thead>
@@ -42,9 +52,6 @@ function Cart(props) {
                                 <th className="col-price">PRICE</th>
                                 <th className="col-quantity">QUANTITY</th>
                                 <th className="col-total">TOTAL</th>
-                                <th className="col-check">
-                                    <input type="checkbox"/>
-                                </th>
                             </tr>
                         </thead>
                         {/* List items */}

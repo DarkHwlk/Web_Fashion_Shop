@@ -175,7 +175,7 @@ ul.products{
     list-style: none;  /*mat dau cham cua li*/
     display: inline-flex;
     flex-wrap: wrap;  /*xuong hang*/
-    justify-content: space-between; /*can deu*/
+    /* justify-content: space-between; can deu */
     transition: 0.5s;
 }
 ul.products li{

@@ -31,12 +31,9 @@ function Products(props) {
         let result = null;
         if(sort==="LOW_TO_HIGH"){
             products = sortPrice(products, true);
-            console.log(1);
         }else if(sort==="HIGH_TO_LOW"){
             products = sortPrice(products, false);
-            console.log(0);
         }
-        console.log(products);
         result = products.map((product, index) => {
             return (
             <Product
