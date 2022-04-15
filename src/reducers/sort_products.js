@@ -11,7 +11,6 @@ const sort_products = (state = initialState, action) => {
             }else{
                 state = "HIGH_TO_LOW";
             }
-            console.log(state)
             return state;
 
         default: return state;

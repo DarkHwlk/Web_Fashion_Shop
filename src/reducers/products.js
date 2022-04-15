@@ -3,7 +3,7 @@ import * as types from '../actions/ActionTypes';
 var initialState = [
     {
         id: 1,
-        type: "tshirt",
+        type: "Tshirt",
         name: "Green tshirt",
         price: 12,
         sale: 8,
@@ -12,7 +12,7 @@ var initialState = [
     },
     {
         id: 2,
-        type: "tshirt",
+        type: "Tshirt",
         name: "Yellow tshirt",
         price: 10,
         sale: 0,
@@ -21,7 +21,7 @@ var initialState = [
     },
     {
         id: 3,
-        type: "shirt",
+        type: "Shirt",
         name: "Navy shirt",
         price: 20,
         sale: 18,
@@ -30,7 +30,7 @@ var initialState = [
     },
     {
         id: 4,
-        type: "shirt",
+        type: "Shirt",
         name: "Caro tshirt",
         price: 18,
         sale: 0,
@@ -39,7 +39,7 @@ var initialState = [
     },
     {
         id: 5,
-        type: "shirt",
+        type: "Shirt",
         name: "Blue shirt",
         price: 18,
         sale: 15,
@@ -48,7 +48,7 @@ var initialState = [
     },
     {
         id: 6,
-        type: "jeans",
+        type: "Jeans",
         name: "Blue jeans",
         price: 30,
         sale: 25,
@@ -57,7 +57,7 @@ var initialState = [
     },
     {
         id: 7,
-        type: "jeans",
+        type: "Jeans",
         name: "Silver jeans",
         price: 30,
         sale: 27,
@@ -66,7 +66,7 @@ var initialState = [
     },
     {
         id: 8,
-        type: "shorts",
+        type: "Shorts",
         name: "Blue shorts",
         price: 20,
         sale: 17,

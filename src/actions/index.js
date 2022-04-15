@@ -8,6 +8,13 @@ export const actSortPriceProducts = (sort) => {  //status=true->Low2High | statu
         sort,
     }
 }
+// Filter products
+export const actFilterProducts = (filter) => {
+    return{
+        type: types.FILTER_PRODUCTS,
+        filter,
+    }
+}
 
 /* actions cart */
 // Add products to cart

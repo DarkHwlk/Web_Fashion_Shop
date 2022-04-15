@@ -1,4 +1,4 @@
-export const price = {
+export const PRICE = {
     type: "PRICE",
     items: [
         {
@@ -27,7 +27,7 @@ export const price = {
         },
     ]
 }
-export const type = {
+export const TYPE = {
     type: "TYPE",
     items: [
         "Tshirt",
@@ -38,7 +38,7 @@ export const type = {
         "Hat",
     ]
 }
-export const status = {
+export const STATUS = {
     type: "STATUS",
     items: [
         "Available",

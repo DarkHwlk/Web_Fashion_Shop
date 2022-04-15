@@ -83,9 +83,11 @@
     right: 0px;
     top: 35px;
     padding: 20px 10px;
+    display: none;
 }
-.products-filter .products-filter-options table{
-    
+.block-products-filter .products-filter:hover .products-filter-options{
+    display: block;
+    transition: 0.4s;
 }
 .products-filter .products-filter-options table th{
     width: 100px;

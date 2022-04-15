@@ -1,5 +1,6 @@
 // actions filter products
 export const SORT_PRICE_PRODUCTS = "SORT_PRICE_PRODUCTS";
+export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
 // actions cart
 export const ADD_TO_CART = "ADD_TO_CART";
 export const DELETE_PRODUCT_IN_CART = "DELETE_PRODUCT_IN_CART";

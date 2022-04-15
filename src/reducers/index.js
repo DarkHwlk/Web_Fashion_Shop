@@ -5,6 +5,7 @@ import cart from './cart';
 import notice from './notice';
 import accounts from './accounts';
 import sort_products from './sort_products';
+import filter_products from './filter_products';
 
 const myReducer = combineReducers({
     products,  //products of web
@@ -12,6 +13,7 @@ const myReducer = combineReducers({
     notice,
     accounts,
     sort_products,
+    filter_products,
 });
 
 export default myReducer;
