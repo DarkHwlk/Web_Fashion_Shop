@@ -9,6 +9,14 @@ var initialState = [
         sale: 8,
         status: false,  //con hang
         img: "./Pictures/man_products/green_tshirt_man.jpg",
+        color: "green",
+        size: ["S","M","L"],
+        list_img: [
+            "./Pictures/man_products/green_tshirt_man.jpg",
+            "./Pictures/man_products/green_tshirt_man.jpg",
+            "./Pictures/man_products/green_tshirt_man.jpg",
+            "./Pictures/man_products/green_tshirt_man.jpg",
+        ],
     },
     {
         id: 2,
@@ -18,6 +26,11 @@ var initialState = [
         sale: 0,
         status: true,  //con hang
         img: "./Pictures/man_products/yellow_tshirt_man.jpg",
+        color: "yellow",
+        size: ["XS","S","M","L"],
+        list_img: [
+            "./Pictures/man_products/yellow_tshirt_man.jpg",
+        ],
     },
     {
         id: 3,
@@ -27,6 +40,12 @@ var initialState = [
         sale: 18,
         status: true,  //con hang
         img: "./Pictures/man_products/navy_shirt_man.jpg",
+        color: "navy",
+        size: ["S","M","L"],
+        list_img: [
+            "./Pictures/man_products/navy_shirt_man.jpg",
+            "./Pictures/man_products/navy_shirt_man.jpg",
+        ],
     },
     {
         id: 4,
@@ -36,6 +55,13 @@ var initialState = [
         sale: 0,
         status: false,  //con hang
         img: "./Pictures/man_products/caro_shirt_man.jpg",
+        color: "caro",
+        size: ["M","L"],
+        list_img: [
+            "./Pictures/man_products/caro_shirt_man.jpg",
+            "./Pictures/man_products/caro_shirt_man.jpg",
+            "./Pictures/man_products/caro_shirt_man.jpg",
+        ],
     },
     {
         id: 5,
@@ -45,6 +71,12 @@ var initialState = [
         sale: 15,
         status: true,  //con hang
         img: "./Pictures/man_products/blue_shirt_man.jpg",
+        color: "blue",
+        size: ["S","M","L"],
+        list_img: [
+            "./Pictures/man_products/blue_shirt_man.jpg",
+            "./Pictures/man_products/blue_shirt_man.jpg",
+        ],
     },
     {
         id: 6,
@@ -54,6 +86,13 @@ var initialState = [
         sale: 25,
         status: true,  //con hang
         img: "./Pictures/man_products/blue_jean_man.jpg",
+        color: "blue",
+        size: ["S","M"],
+        list_img: [
+            "./Pictures/man_products/blue_jean_man.jpg",
+            "./Pictures/man_products/blue_jean_man.jpg",
+            "./Pictures/man_products/blue_jean_man.jpg",
+        ],
     },
     {
         id: 7,
@@ -63,6 +102,11 @@ var initialState = [
         sale: 27,
         status: false,  //con hang
         img: "./Pictures/man_products/silver_jean_man.jpg",
+        color: "silver",
+        size: ["M","L"],
+        list_img: [
+            "./Pictures/man_products/silver_jean_man.jpg",
+        ],
     },
     {
         id: 8,
@@ -72,6 +116,12 @@ var initialState = [
         sale: 17,
         status: true,  //con hang
         img: "./Pictures/man_products/blue_short_man.jpg",
+        color: "blue",
+        size: ["S","L"],
+        list_img: [
+            "./Pictures/man_products/blue_short_man.jpg",
+            "./Pictures/man_products/blue_short_man.jpg",
+        ],
     },
 ];
 

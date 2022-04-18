@@ -17,6 +17,8 @@ import NotFound from "./components/NotFound";
 import Notice from "./components/Notice";
 import FormLogin from "./components/login/FormLogin";
 import FormRegister from "./components/login/FormRegister";
+// product
+import DetailProduct from "./components/detail_product/DetailProduct";
 
 function App(props) {
 
@@ -53,10 +55,13 @@ function App(props) {
             <Route path="cart" element = {<Cart/>}/>
             {/* Category Routes */}
             {addCategoryRoutes()}
+
+            <Route path="product" element = {<DetailProduct/>}/>
+
             {/* <Route path="products" element = {<Products/>}>
             <Route path=":id" element = {<Product/>}/>
             </Route> */}
-            <Route path="*" element = {<NotFound/>}/>  {/* Khi url sai */}
+            <Route path="*" element = {<NotFound/>}/>  {/* Wrong URL */}
         </Routes>
 
         {/* <!--Footer--> */}

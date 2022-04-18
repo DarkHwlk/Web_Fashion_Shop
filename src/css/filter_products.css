@@ -89,14 +89,21 @@
     display: block;
     transition: 0.4s;
 }
+.products-filter .products-filter-options table tr{
+    display: flex;
+    width: 100%;
+}
 .products-filter .products-filter-options table th{
     width: 100px;
     padding-bottom: 7px;
     font-size: 16px;
+    flex: 1;
 }
 .products-filter .products-filter-options table td{
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
 }
 .products-filter .products-filter-options table td i{
     margin-left: 5px;

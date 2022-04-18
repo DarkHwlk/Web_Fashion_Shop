@@ -1,0 +1,162 @@
+.green{
+    background-color: green!important;
+}
+
+#product-option-box .active{
+    border: 2px solid #d63031!important;
+}
+/* ---------------------------------------------- */
+#wrapper-content{
+    max-width: 1170px;
+    margin: 0 auto;  /*Can giua*/
+    margin-top: 48px;
+}
+#product-info-main{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    padding: 50px 0px;
+}
+#product-image-box{
+    left: 0px;
+    width: fit-content;
+    height: fit-content;  
+    display: flex;
+    flex: 2;
+}
+#product-image-box .product-image-list{
+    left: 0px;
+    width: 150px;
+    height: fit-content;
+    /* background-color: red;  */
+    padding: 20px 0px;
+}
+#product-image-box .product-image-list img{
+    padding-bottom: 20px;
+    width: 100px;
+    cursor: pointer;
+}
+#product-image-box .product-image-list img:last-child{
+    padding-bottom: 0px;
+}
+#product-image-box .product-image-main img{
+    width: 550px;
+}
+#product-feature{
+    width: 100%;
+    height: fit-content;
+    margin-left: 50px;
+    color: #2d3436;
+    flex: 1;
+}
+#product-feature .product-price-code{
+    margin-bottom: 20px;
+}
+#product-feature .product-name{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#product-feature .detail-code{
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+#product-feature .price-info{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+#product-feature .price-info span{
+    text-decoration: line-through;
+    margin-right: 15px;
+}
+#product-feature .price-info span:last-child{
+    color: #d63031;
+    text-decoration: none;
+}
+#product-feature .label-sale{
+    font-size: 13px;
+    color: #d63031;
+}
+#product-option-box{
+    border-top: #b2bec3 solid 1px;
+    padding: 20px 0px;
+}
+#product-option-box .option-color{
+    margin-bottom: 20px;
+}
+#product-option-box .option-color p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+#product-option-box .option-color .product-color-list{
+    display: flex;
+}
+#product-option-box .option-color .product-color-list .product-color{
+    width: 26px;
+    height: 26px;
+    margin-right: 15px;
+}
+#product-option-box .option-size p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+#product-option-box .option-size .product-size-list{
+    display: flex;
+}
+#product-option-box .option-size .product-size-list .product-size{
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 26px;
+    height: fit-content;
+    border: 2px solid;
+    margin-right: 10px;
+}
+#product-option-box .option-size h4{
+    margin-top: 10px;
+    font-weight: 100;
+    font-size: small;
+    cursor: pointer;
+}
+#product-option-box .option-size h4:hover{
+    text-decoration: underline;
+}
+#product-option-box .product-heart-share{
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+#product-option-box .product-heart-share .product-heart{
+    cursor: pointer;
+}
+#product-option-box .product-heart-share .product-share{
+    cursor: pointer;
+    transition: 0.4s;
+}
+#product-option-box .product-heart-share span{
+    margin-left: 7px;
+    font-size: small;
+    font-weight: bold;
+}
+#product-option-box .product-heart-share i{
+    transition: 0.3s;
+}
+#product-option-box .product-heart-share .product-heart:hover i{
+    color: #d63031;
+    transition: 0.3s;
+}
+#product-option-box .product-heart-share .product-heart:hover span{
+    text-decoration: underline;
+}
+#product-option-box .product-heart-share .product-heart i.active{
+    color: #d63031;
+    border: none!important;
+}
+#product-option-box .product-heart-share .product-share:hover i{
+    color: #d63031;
+    transition: 0.3s;
+}
+#product-option-box .product-heart-share .product-share:hover span{
+    text-decoration: underline;
+}

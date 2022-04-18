@@ -28,7 +28,7 @@ function Product(props) {
                         <img className="product-image" src={img} alt="Tshirt 1"/>
                     </a>
                     {/* <!--Detail--> */}
-                    <a href="#" className="detail">Detail</a>
+                    <a href="./product" className="detail">Detail</a>
                 </div>
                 <div className="product-info-buy">
                     {/* <!--Info--> */}
