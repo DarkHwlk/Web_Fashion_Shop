@@ -1,4 +1,4 @@
-import ContainerProducts from "../components/ContainerProducts";
+import ContainerProducts from "../components/products/ContainerProducts";
 
 const routes_categorys = [
     {

@@ -6,7 +6,7 @@ import * as actions from '../../actions/index';
 function CartItem(props) {
 
     const {product, quantity, onDeleteInCart, onUpdateQuantityInCart} = props;
-    const {id, type, name, img, price, sale} = product;
+    const {id, type, color, size, name, img, price, sale} = product;
 
     const calculateTotal = (price, quantity) => {
         let result = price*quantity;
@@ -37,6 +37,10 @@ function CartItem(props) {
                     <a href="#">{name}</a>
                     <p className="cart-item-type">{type}</p>
                     {/* Maybe have option like: size,color,... at here */}
+                    <p className="cart-item-type">
+                        Size: {typeof(size)==="string" ? size : "none"}
+                    </p>
+                    <p className="cart-item-type">Color: {color}</p>
                 </div>
             </div>
         </td>

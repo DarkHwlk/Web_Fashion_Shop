@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import {connect} from 'react-redux';
 
 import * as actions from '../../actions/index';
@@ -10,18 +10,17 @@ import ProductBtnBox from "./ProductBtnBox";
 
 function ProductInfoBox(props) {
 
-    const {product} = props;
+    const {product, onAddToCart} = props;
     const {id, type, name, price, sale, status, color, size} = product;
 
-    const showPercentDiscount = (price, sale) => {
-        let result = null;
-        if(sale){
-            let percent = (price-sale)/price*100;
-            result = <div className="label-sale">
-                Discount {percent.toFixed(2)}%
-            </div>
+    const curProduct = useRef(product);
+
+    const onCheckSize = (size) => {
+        curProduct.current = {
+            ...curProduct.current,
+            size: size,
         }
-        return result;
+        console.log(curProduct.current)
     }
 
     return (
@@ -30,8 +29,13 @@ function ProductInfoBox(props) {
             id={id} name={name} status={status}
             type={type} price={price} sale={sale}
         />
-        <ProductOptionBox color={color} size={size}/>
-        <ProductBtnBox/>
+        <ProductOptionBox 
+            color={color} size={size}
+            onCheckSize={(size) => onCheckSize(size)}
+        />
+        <ProductBtnBox
+            onAddToCart={()=>onAddToCart(curProduct.current)}
+        />
     </div>
     );
 }
@@ -44,7 +48,9 @@ const mapStateToProps = (state) => {
 /* Chuyen action thanh props cua component nay */
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        
+        onAddToCart: (product) => {
+            dispatch(actions.actAddToCart(product, 1));
+        },
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ProductInfoBox);

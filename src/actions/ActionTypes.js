@@ -13,3 +13,4 @@ export const LOGIN = "LOGIN";
 export const REGISTER_NEW_ACCOUNT = "REGISTER_NEW_ACCOUNT";
 export const CLEAR_LOGIN_SUCCESS = "CLEAR_LOGIN_SUCCESS";
 export const CLEAR_EXISTING_ACCOUNT = "CLEAR_EXISTING_ACCOUNT";
+// actions detail_product

@@ -3,9 +3,9 @@ import React from "react";
 import {NavLink, Link} from 'react-router-dom';
 
 /* Components */
-import SmallMenu from "./menus/SmallMenu";
-import CategoryMenu from "./menus/CategoryMenu";
-import IconMenu from "./menus/IconMenu";
+import SmallMenu from "./SmallMenu";
+import CategoryMenu from "./CategoryMenu";
+import IconMenu from "./IconMenu";
 
 function Menu() {
 
@@ -21,7 +21,7 @@ function Menu() {
                     to="/" 
                     id="logo"
                     className='hide-small'>
-                    <img src="./Pictures/logo-boo.png" alt="Boo"/>
+                    <img src="/Pictures/logo-boo.png" alt="Boo"/>
                 </NavLink>
                 {/* Main menu */}
                 <CategoryMenu/>

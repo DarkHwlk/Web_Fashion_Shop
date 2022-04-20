@@ -1,5 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
+/* Router */
+import {useParams} from 'react-router-dom';
 
 import * as actions from '../../actions/index';
 
@@ -10,7 +12,11 @@ import ProductInfoBox from "./ProductInfoBox";
 
 function DetailProduct(props) {
 
-    const {product} = props;
+    const {products} = props;
+    const {productId} = useParams();
+    const product = products.find((product, index) => {
+        return product.id.toString() === productId;
+    });
     const {img, list_img} = product;
 
     return (
@@ -25,7 +31,7 @@ function DetailProduct(props) {
 /* Chuyen state cua reducer thanh props cua component nay */
 const mapStateToProps = (state) => {
     return { 
-        product: state.detail_product,
+        products: state.products,
     };
 }
 /* Chuyen action thanh props cua component nay */

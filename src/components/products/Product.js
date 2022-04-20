@@ -1,12 +1,14 @@
 import React from "react";
 import {connect} from 'react-redux';
+/* Router */
+import {NavLink} from 'react-router-dom';
 
 import * as actions from '../../actions/index';
 
 function Product(props) {
 
-    const {product, onAddToCart, onChangeStatusNotice, 
-        onChangeNotice} = props;
+    const {pathURL, product, onAddToCart, onChangeStatusNotice, 
+        onChangeNotice, onChangeDetailProduct} = props;
     const {id, type, name, img, status, price, sale} = product;
 
     const clickAddToCart = (product, status) => {
@@ -28,7 +30,8 @@ function Product(props) {
                         <img className="product-image" src={img} alt="Tshirt 1"/>
                     </a>
                     {/* <!--Detail--> */}
-                    <a href="./product" className="detail">Detail</a>
+                    <NavLink to={`${pathURL}/products/${id}`} 
+                        className="detail">Detail</NavLink>
                 </div>
                 <div className="product-info-buy">
                     {/* <!--Info--> */}

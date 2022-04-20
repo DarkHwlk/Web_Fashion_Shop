@@ -2,13 +2,16 @@ import React, {useState} from "react";
 
 function ProductBtnBox(props) {
 
-    const {} = props;  
+    const {onAddToCart} = props;  
 
     const [heart, setHeart] = useState(false);
 
     return (
         <div id="product-option-box">
-        <button className="btn-checkout-order">ADD TO THE CART</button>
+        <button 
+            className="btn-checkout-order"
+            onClick={() => onAddToCart()}
+        >ADD TO THE CART</button>
         <div className="product-heart-share">
             <div 
                 className="product-heart"

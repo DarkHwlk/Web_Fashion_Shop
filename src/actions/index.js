@@ -1,6 +1,6 @@
 import * as types from './ActionTypes'
 
-/* actions products */
+/* actions */
 // Sort products
 export const actSortPriceProducts = (sort) => {  //status=true->Low2High | status=false->High2Low
     return{

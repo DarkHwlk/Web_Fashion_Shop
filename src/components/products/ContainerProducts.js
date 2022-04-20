@@ -1,10 +1,15 @@
 import React from "react";
+/* Router */
+import {useLocation} from 'react-router-dom';
 
 /* Components */
-import Products from "./products/Products";
-import ContainerFilterProducts from "./products_filter/ContainerFilterProducts";
+import Products from "./Products";
+import ContainerFilterProducts from "../products_filter/ContainerFilterProducts";
 
 function ContainerProducts() {
+
+    const location = useLocation();  // info about current url
+
     return (
     <div id="wrapper-content">
         {/* Title */}
@@ -14,7 +19,7 @@ function ContainerProducts() {
         {/* Block filter */}
         <ContainerFilterProducts/>
         {/* Products */}
-        <Products/>
+        <Products pathURL={location.pathname}/>
         {/* Index */}
         <div id="index">
             <a className="index-1 page-current" href="#">1</a>

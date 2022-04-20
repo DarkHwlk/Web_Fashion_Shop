@@ -2,18 +2,35 @@ import React, {useState} from "react";
 
 function ProductOptionBox(props) {
 
-    const {color, size} = props;  
+    const {color, size, onCheckSize} = props;  
 
-    const [sizeCheck, setSizecheck] = useState(0);
+    const [sizeCheck, setSizecheck] = useState(-1);
 
     const showSizeList = (sizeList) => {
         let result = null;
         result = sizeList.map((size, index) => {
             if(sizeCheck===index)
-                return <div className="product-size active">{size}</div>;
-            return <div className="product-size">{size}</div>
+                return <div 
+                    key={index}
+                    className="product-size active"
+                    onClick={() => clickCheckSize(-1)}
+                >{size}</div>;
+            return <div 
+                key={index}
+                className="product-size"
+                onClick={() => clickCheckSize(index)}
+            >{size}</div>
         });
         return result;
+    }
+
+    const clickCheckSize = (index) => {
+        setSizecheck(index);
+        if(index===-1){
+            onCheckSize(size);
+        }else{
+            onCheckSize(size[index]);
+        }
     }
 
     return (

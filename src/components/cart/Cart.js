@@ -1,8 +1,8 @@
 import React from "react";
 import {connect} from 'react-redux';
 /* Components */
-import CartItem from './cart/CartItem.js';
-import CartBill from './cart/CartBill.js'
+import CartItem from './CartItem.js';
+import CartBill from './CartBill.js'
 
 function Cart(props) {
 

@@ -7,7 +7,7 @@ import Product from "./Product";
 
 function Products(props) {
 
-    const {products, sort, filter} = props;
+    const {pathURL, products, sort, filter} = props;
 
     let curProducts = useRef(products);  // Current products have been arranged
 
@@ -67,6 +67,7 @@ function Products(props) {
             <Product
                 product={product}
                 key={index}
+                pathURL={pathURL}
             />);
         })
         return result;
