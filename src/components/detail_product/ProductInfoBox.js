@@ -10,7 +10,7 @@ import ProductBtnBox from "./ProductBtnBox";
 
 function ProductInfoBox(props) {
 
-    const {product, onAddToCart} = props;
+    const {product, onAddToCart, onToggleFavourite, favourite} = props;
     const {id, type, name, price, sale, status, color, size} = product;
 
     const curProduct = useRef(product);
@@ -20,7 +20,15 @@ function ProductInfoBox(props) {
             ...curProduct.current,
             size: size,
         }
-        console.log(curProduct.current)
+    }
+    const findItem = (items, product) => {  // return -1 if there are not product in cart
+        let index = -1;
+        if(items.length>0){
+            items.forEach((item, i) => {
+                if(product.id === item.product.id) index = i;
+            });
+        }
+        return index;
     }
 
     return (
@@ -35,6 +43,8 @@ function ProductInfoBox(props) {
         />
         <ProductBtnBox
             onAddToCart={()=>onAddToCart(curProduct.current)}
+            onToggleFavourite={()=>onToggleFavourite(curProduct.current)}
+            favourite={findItem(favourite, product)}
         />
     </div>
     );
@@ -42,7 +52,7 @@ function ProductInfoBox(props) {
 /* Chuyen state cua reducer thanh props cua component nay */
 const mapStateToProps = (state) => {
     return { 
-        product: state.detail_product,
+        favourite: state.favourite,
     };
 }
 /* Chuyen action thanh props cua component nay */
@@ -50,6 +60,9 @@ const mapDispatchToProps = (dispatch, props) => {
     return {
         onAddToCart: (product) => {
             dispatch(actions.actAddToCart(product, 1));
+        },
+        onToggleFavourite: (product) => {
+            dispatch(actions.actToggleFavourite(product, 1));
         },
     }
 }

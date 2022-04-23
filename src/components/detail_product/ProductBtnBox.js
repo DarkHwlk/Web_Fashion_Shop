@@ -2,9 +2,11 @@ import React, {useState} from "react";
 
 function ProductBtnBox(props) {
 
-    const {onAddToCart} = props;  
+    const {onAddToCart, onToggleFavourite, favourite} = props;  
 
-    const [heart, setHeart] = useState(false);
+    const clickToggleFavourite = () => {
+        onToggleFavourite();
+    }
 
     return (
         <div id="product-option-box">
@@ -15,9 +17,9 @@ function ProductBtnBox(props) {
         <div className="product-heart-share">
             <div 
                 className="product-heart"
-                onClick={() => setHeart(prev => !prev)}
+                onClick={() => clickToggleFavourite()}
             >
-                <i className={`fa fa-heart ${heart?"active":null}`} aria-hidden="true"/>
+                <i className={`fa fa-heart ${favourite!==-1?"active":null}`} aria-hidden="true"/>
                 <span>Add to favorites list</span>
             </div>
             <div className="product-share">

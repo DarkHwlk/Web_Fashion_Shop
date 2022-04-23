@@ -9,9 +9,10 @@ import routes_categorys from "./constants/routes_categorys";
 
 /* Components */
 import Menu from "./components/menus/Menu";
+import Footer from "./components/footer/Footer";
 import Profile from "./components/profile/ProfileContainer";
 import Cart from "./components/cart/Cart";
-import Home from "./components/Home";
+import Home from "./components/home/Home";
 import NotFound from "./components/NotFound";
 import Notice from "./components/Notice";
 import FormLogin from "./components/login/FormLogin";
@@ -74,9 +75,7 @@ function App(props) {
         </Routes>
 
         {/* <!--Footer--> */}
-        {/* <div id="footer">
-            <h1>Footer</h1>
-        </div> */}
+        <Footer/>
         
         {/* Notice */}
         <Notice/>

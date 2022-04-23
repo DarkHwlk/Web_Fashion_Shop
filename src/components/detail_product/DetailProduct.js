@@ -23,7 +23,7 @@ function DetailProduct(props) {
     <div id="wrapper-content">
         <div id="product-info-main">
             <ProductImageBox img={img} list={list_img}/>
-            <ProductInfoBox/>
+            <ProductInfoBox product={product}/>
         </div>
     </div>
     );

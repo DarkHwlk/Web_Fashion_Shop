@@ -79,7 +79,7 @@
 .block-products-filter .products-filter .products-filter-options{
     background-color: #f5f6fa;
     position: absolute;
-    z-index: 1;
+    z-index: 2;  
     right: 0px;
     top: 35px;
     padding: 20px 10px;

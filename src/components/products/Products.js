@@ -11,9 +11,9 @@ function Products(props) {
 
     let curProducts = useRef(products);  // Current products have been arranged
 
-    const sortPrice = (products, sort) => {
-        let result = products;
-        result = products.sort((product1,product2) => {
+    const sortPrice = (curProducts, sort) => {
+        let result = curProducts;
+        result = curProducts.sort((product1,product2) => {
             const price1 = product1.sale?product1.sale:product1.price;
             const price2 = product2.sale?product2.sale:product2.price;
             if(sort){  //LowToHigh
@@ -27,7 +27,7 @@ function Products(props) {
             }
         });   
         return result;
-    }
+    };
 
     const filterProducts = (allProducts, filter) => {
         let result = allProducts;
@@ -52,11 +52,13 @@ function Products(props) {
             });
         }
         return result;
-    }
+    };
 
     const showProduct = (allProducts, sort, filter) => {
         let result = null;
+        /* Filter */
         curProducts.current = filterProducts(allProducts,filter);
+        /* Sort */
         if(sort==="LOW_TO_HIGH"){
             curProducts.current = sortPrice(curProducts.current, true);
         }else if(sort==="HIGH_TO_LOW"){
@@ -71,7 +73,7 @@ function Products(props) {
             />);
         })
         return result;
-    }
+    };
 
     return (
         <ul className="products">

@@ -4,18 +4,18 @@ import {connect} from 'react-redux'
 /* Router */
 import {NavLink} from 'react-router-dom';
 /* Components */
-import ItemMiniCart from "./ItemMiniCart";
+import ItemMiniFavourite from "./ItemMiniFavourite";
 
-function MiniCart(props) {
+function MiniFavourite(props) {
 
-    const {onClose, cart} = props;
+    const {onClose, favourite} = props;
 
-    const showItems = (cart) => {
+    const showItems = () => {
         let result = null;
-        result = cart.map((productInCart, index) => {
+        result = favourite.map((productInCart, index) => {
             let {product, quantity} = productInCart;
             return (
-            <ItemMiniCart
+            <ItemMiniFavourite
                 product={product}
                 quantity={quantity}
                 key={index}
@@ -24,10 +24,10 @@ function MiniCart(props) {
         return result;
     }
 
-    const totalCurrentPrice = (cart) => {
+    const totalCurrentPrice = (favourite) => {
         let result = 0;
-        if(cart.length>0){
-            result = cart.reduce((total, item) => {
+        if(favourite.length>0){
+            result = favourite.reduce((total, item) => {
                 if(item.product.sale>0)  //if sale > 0
                     return total+item.product.sale*item.quantity;
                 else return total+item.product.price*item.quantity;
@@ -36,10 +36,10 @@ function MiniCart(props) {
         return result;
     }
 
-    const quantityProducts = (cart) => {
+    const quantityProducts = (favourite) => {
         let result = 0;
-        if(cart.length>0){
-            result = cart.reduce((total, item) => {
+        if(favourite.length>0){
+            result = favourite.reduce((total, item) => {
                 return total+item.quantity;
             },0);
         }
@@ -48,24 +48,15 @@ function MiniCart(props) {
 
     return (
         <div className="minicart-container">
-            <div className="minicart-heading">
-                {quantityProducts(cart)} products in cart
+            <div className="minifavourite-heading">
+                {quantityProducts(favourite)} products in favourite
                 <button onClick={() => onClose()}>
                     <i className="fa fa-close"/>
                 </button>
             </div>
             <ul className="minicart-items">
-                {showItems(cart)}
+                {showItems()}
             </ul>
-            <div className="minicart-btn">
-                <NavLink to='/cart'>
-                    <p>GO TO CART</p>
-                </NavLink>
-            </div>
-            <div className="minicart-total">
-                <span>Current total:</span>
-                <span>{totalCurrentPrice(cart)}$</span>
-            </div>
         </div>
     );
 }
@@ -73,7 +64,7 @@ function MiniCart(props) {
 /* Chuyen state cua reducer thanh props cua component nay */
 const mapStateToProps = (state) => {
     return { 
-        cart: state.cart,
+        favourite: state.favourite,
     };
 }
 /* Chuyen action thanh props cua component nay */
@@ -83,4 +74,4 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MiniCart);
+export default connect(mapStateToProps, mapDispatchToProps)(MiniFavourite);

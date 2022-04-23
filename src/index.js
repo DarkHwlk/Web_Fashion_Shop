@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import './css/cart.css';
 import './css/menu_cart.css';
+import './css/menu_favourite.css';
 import './css/notice.css';
 import './css/login.css';
 import './css/filter_products.css';

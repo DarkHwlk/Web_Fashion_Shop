@@ -1,0 +1,17 @@
+div.minifavourite-heading{
+    padding: 15px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: crimson!important;
+    border-bottom: 1px solid #b2bec3;
+    display: flex;
+    justify-content: space-between;
+}
+div.minifavourite-heading>button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+div.minifavourite-heading>button>i{
+    font-size: 20px !important;
+}

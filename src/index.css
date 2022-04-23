@@ -189,10 +189,33 @@ ul.products li{
 ul.products li .product-top{
     position: relative;
 }
+ul.products li .product-top .product-heart{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+}
+ul.products li .product-top .product-heart i{
+    font-size: 28px;
+    color: #666666;
+    cursor: pointer;
+}
+
+ul.products li:hover .product-top .product-heart i{
+    opacity: 1!important;
+    color: #333f48;
+}
+ul.products li .product-top .product-heart i:hover{
+    color: crimson;
+}
+ul.products li .product-top .product-heart i.active{
+    color: crimson!important;
+}
 ul.products li:hover .product-top .product-thumb img{
-    filter: opacity(85%);  /*hover chuot lam anh mo*/
+    filter: opacity(90%);  /*hover chuot lam anh mo*/
 }
 ul.products li .product-top .product-thumb img{
+    z-index: 0;
     display: block;  /*Lam mat khung cua anh*/
 }
 ul.products li .product-top a.detail{
@@ -305,6 +328,21 @@ ul.products li .product-top:hover a.detail{
 .hide-small a{
     margin-left: 10px;
 }
+.hide-small a.heart-icon-menu::before{
+    content: '';
+    height: 4px;
+    width: 0px;
+    background-color: #f00;
+    position: absolute;
+    bottom: -1px;
+    right: 75px;
+    display: none;
+    transition: 0.5s;
+}
+.hide-small a.heart-icon-menu:hover::before{
+    display: block;
+    width: 25px;
+}
 .hide-small a.cart-icon-menu::before{
     content: '';
     height: 4px;
@@ -346,12 +384,36 @@ ul.products li .product-top:hover a.detail{
     text-align: center;
     border-radius: 5px;
 }
-
-/* Footer */
-#footer{
-    height: 200px;
+/* css favourite item in cart at icon-menu */
+.hide-small span.icon-menu-favourite-item {
+    position: absolute;
+    right: 70px;
+    top: 5px;
+    color: #fff;
+    background-color: #f00;
+    padding: 0 3px;
+    text-align: center;
+    border-radius: 5px;
 }
 
+/* Footer */
+#footer-wrapper{
+    height: 150px;
+    background-color: #334862;
+    color: #f8f8f8;
+    padding: 40px;
+    display: flex;
+    margin-top: 50px;
+}
+#footer-wrapper .footer-col{
+    flex: 1;
+    text-align: center;
+}
+#footer-wrapper .footer-col .footer-title{
+    font-weight: 600;
+}
+
+/* Responsive */
 @media screen and (max-width: 875px){
     /*Responsive tren nhung thiet bi co width be hon 768px*/
     #small-menu{

@@ -43,6 +43,33 @@ export const actUpdateQuantityProductInCart = (product, quantity) => {
     }
 }
 
+/* actions favourite */
+// Add products to favourite
+export const actToggleFavourite = (product, quantity) => {
+    return{
+        type: types.TOGGLE_FAVOURITE,
+        product,  // product: product
+        quantity,  // quantity: quantity
+    }
+}
+
+// Delete product
+export const actDeleteProductInFavourite = (product) => {
+    return{
+        type: types.DELETE_PRODUCT_IN_FAVOURITE,
+        product,
+    }
+}
+
+// Update quantity, option
+export const actUpdateQuantityProductInFavourite = (product, quantity) => {
+    return{
+        type: types.UPDATE_QUANTITY_PRODUCT_IN_FAVOURITE,
+        product,
+        quantity,
+    }
+}
+
 /* actions notice */
 // Show/Hide Notice
 export const actChangeStatusNotice = (status) => {
