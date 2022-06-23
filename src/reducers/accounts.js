@@ -54,7 +54,7 @@ const accounts = (state = initialState, action) => {
     }
 }
 
-// return -1 if there are not this account (test)
+// return -1 if there are not this account 
 var checkAvailableAccounts = (availableAccounts, account) => {
     let index = -1;
     if(availableAccounts.length>0){
